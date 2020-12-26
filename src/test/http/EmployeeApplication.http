@@ -1,0 +1,15 @@
+### Run EmployeeApplication Calls
+
+### GET: Bring the list of company members
+GET http://localhost:8080/employees
+Accept: application/json
+
+### POST: Add a new memeber to the company
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "name":"Bilbo Baggins",
+  "role":"Burglar"
+}
+
