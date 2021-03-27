@@ -7,9 +7,13 @@ import java.util.Objects;
 
 @Entity
 public class User {
+
     private @Id @GeneratedValue Long id;
+    private Integer departmentID;
     private String username;
     private String password;
+    private String userAlias;
+    private String avatarPhotoLink;
     private String userType;
     private Boolean isLegalPerson;
     private String userLastName;
@@ -18,54 +22,97 @@ public class User {
     private String address2Text;
     private String cityName;
     private String stateCode;
-    private String postalCode;
+    private Integer postalCode;
     private String countryCode;
-    private String landlineNumber;
-    private String faxNumber;
-    private String cellPhoneNumber;
-    private String userEmail;
+    private Integer landlineNumber;
+    private Integer faxNumber;
+    private Integer cellPhoneNumber;
+    private String alternateEmail;
     private String website;
     private String userIDType;
-    private String userIDNumber;
+    private Integer userIDNumber;
     private String userDOBDate;
     private String userTaxCode;
-    private String userTaxCUITL;
+    private Integer userTaxCUITL;
     private Boolean isStore;
     private Boolean isStoreContact;
-    private Boolean isCustomer;
     private Boolean isSupplier;
+    private Boolean isSupplierContact;
     private Boolean isShipper;
+    private Boolean isShipperContact;
+    private Boolean isPymntChannel;
+    private Boolean isPymntChContact;
     private Boolean isMember;
+    private Boolean isCustomer;
+    private Boolean isSubscriber;
+    private Boolean isBlogger;
     private String userFacebookLink;
     private String userTwitterLink;
     private String userInstagramLink;
     private String userPinterestLink;
     private String subscriptionEmail;
-    private String userStatus;
+    private String createdByID;
     private String createdDatime;
     private String modifByID;
     private String modifDatime;
+    private String userStatus;
 
-    public  User(){}
+    public User() {
 
-    public User(String userFirstName, String userLastName, String userEmail, String address1Text, String address2Text, String userStatus ){
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.userEmail = userEmail;
-        this.address1Text = address1Text;
-        this.address2Text = address2Text;
-        this.userStatus = userStatus;
     }
 
-    public User(String username, String userFirstName, String userLastName, String userStatus, String userType,String createdDatime, String modifDatime, String modifByID){
+    public User(Integer departmentID, String username, String password, String userAlias, String avatarPhotoLink, String userType, Boolean isLegalPerson, String userLastName, String userFirstName, String address1Text, String address2Text, String cityName, String stateCode, Integer postalCode, String countryCode, Integer landlineNumber, Integer faxNumber, Integer cellPhoneNumber, String alternateEmail, String website) {
+        this.departmentID = departmentID;
         this.username = username;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
+        this.password = password;
+        this.userAlias = userAlias;
+        this.avatarPhotoLink = avatarPhotoLink;
         this.userType = userType;
-        this.userStatus = userStatus;
-        this.createdDatime = createdDatime;
-        this.modifDatime = modifDatime;
-        this.modifByID = modifByID;
+        this.isLegalPerson = isLegalPerson;
+        this.userLastName = userLastName;
+        this.userFirstName = userFirstName;
+        this.address1Text = address1Text;
+        this.address2Text = address2Text;
+        this.cityName = cityName;
+        this.stateCode = stateCode;
+        this.postalCode = postalCode;
+        this.countryCode = countryCode;
+        this.landlineNumber = landlineNumber;
+        this.faxNumber = faxNumber;
+        this.cellPhoneNumber = cellPhoneNumber;
+        this.alternateEmail = alternateEmail;
+        this.website = website;
+    }
+
+    public User(Integer departmentID, String username, String password, String userAlias, String avatarPhotoLink, String userType, Boolean isLegalPerson, String userLastName, String userFirstName, String address1Text, String address2Text, String cityName, String stateCode, Integer postalCode, String countryCode, Integer landlineNumber, Integer faxNumber, Integer cellPhoneNumber, String alternateEmail, String website, Boolean isStore, Boolean isSupplier, Boolean isShipper, Boolean isPymntChannel, Boolean isMember, Boolean isCustomer, Boolean isSubscriber, Boolean isBlogger) {
+        this.departmentID = departmentID;
+        this.username = username;
+        this.password = password;
+        this.userAlias = userAlias;
+        this.avatarPhotoLink = avatarPhotoLink;
+        this.userType = userType;
+        this.isLegalPerson = isLegalPerson;
+        this.userLastName = userLastName;
+        this.userFirstName = userFirstName;
+        this.address1Text = address1Text;
+        this.address2Text = address2Text;
+        this.cityName = cityName;
+        this.stateCode = stateCode;
+        this.postalCode = postalCode;
+        this.countryCode = countryCode;
+        this.landlineNumber = landlineNumber;
+        this.faxNumber = faxNumber;
+        this.cellPhoneNumber = cellPhoneNumber;
+        this.alternateEmail = alternateEmail;
+        this.website = website;
+        this.isStore = isStore;
+        this.isSupplier = isSupplier;
+        this.isShipper = isShipper;
+        this.isPymntChannel = isPymntChannel;
+        this.isMember = isMember;
+        this.isCustomer = isCustomer;
+        this.isSubscriber = isSubscriber;
+        this.isBlogger = isBlogger;
     }
 
     public Long getId() {
@@ -74,6 +121,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getDepartmentID() {
+        return departmentID;
+    }
+
+    public void setDepartmentID(Integer departmentID) {
+        this.departmentID = departmentID;
     }
 
     public String getUsername() {
@@ -90,6 +145,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserAlias() {
+        return userAlias;
+    }
+
+    public void setUserAlias(String userAlias) {
+        this.userAlias = userAlias;
+    }
+
+    public String getAvatarPhotoLink() {
+        return avatarPhotoLink;
+    }
+
+    public void setAvatarPhotoLink(String avatarPhotoLink) {
+        this.avatarPhotoLink = avatarPhotoLink;
     }
 
     public String getUserType() {
@@ -156,11 +227,11 @@ public class User {
         this.stateCode = stateCode;
     }
 
-    public String getPostalCode() {
+    public Integer getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(String postalCode) {
+    public void setPostalCode(Integer postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -172,36 +243,36 @@ public class User {
         this.countryCode = countryCode;
     }
 
-    public String getLandlineNumber() {
+    public Integer getLandlineNumber() {
         return landlineNumber;
     }
 
-    public void setLandlineNumber(String landlineNumber) {
+    public void setLandlineNumber(Integer landlineNumber) {
         this.landlineNumber = landlineNumber;
     }
 
-    public String getFaxNumber() {
+    public Integer getFaxNumber() {
         return faxNumber;
     }
 
-    public void setFaxNumber(String faxNumber) {
+    public void setFaxNumber(Integer faxNumber) {
         this.faxNumber = faxNumber;
     }
 
-    public String getCellPhoneNumber() {
+    public Integer getCellPhoneNumber() {
         return cellPhoneNumber;
     }
 
-    public void setCellPhoneNumber(String cellPhoneNumber) {
+    public void setCellPhoneNumber(Integer cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getAlternateEmail() {
+        return alternateEmail;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setAlternateEmail(String alternateEmail) {
+        this.alternateEmail = alternateEmail;
     }
 
     public String getWebsite() {
@@ -220,11 +291,11 @@ public class User {
         this.userIDType = userIDType;
     }
 
-    public String getUserIDNumber() {
+    public Integer getUserIDNumber() {
         return userIDNumber;
     }
 
-    public void setUserIDNumber(String userIDNumber) {
+    public void setUserIDNumber(Integer userIDNumber) {
         this.userIDNumber = userIDNumber;
     }
 
@@ -244,11 +315,11 @@ public class User {
         this.userTaxCode = userTaxCode;
     }
 
-    public String getUserTaxCUITL() {
+    public Integer getUserTaxCUITL() {
         return userTaxCUITL;
     }
 
-    public void setUserTaxCUITL(String userTaxCUITL) {
+    public void setUserTaxCUITL(Integer userTaxCUITL) {
         this.userTaxCUITL = userTaxCUITL;
     }
 
@@ -268,20 +339,20 @@ public class User {
         isStoreContact = storeContact;
     }
 
-    public Boolean getCustomer() {
-        return isCustomer;
-    }
-
-    public void setCustomer(Boolean customer) {
-        isCustomer = customer;
-    }
-
     public Boolean getSupplier() {
         return isSupplier;
     }
 
     public void setSupplier(Boolean supplier) {
         isSupplier = supplier;
+    }
+
+    public Boolean getSupplierContact() {
+        return isSupplierContact;
+    }
+
+    public void setSupplierContact(Boolean supplierContact) {
+        isSupplierContact = supplierContact;
     }
 
     public Boolean getShipper() {
@@ -292,6 +363,30 @@ public class User {
         isShipper = shipper;
     }
 
+    public Boolean getShipperContact() {
+        return isShipperContact;
+    }
+
+    public void setShipperContact(Boolean shipperContact) {
+        isShipperContact = shipperContact;
+    }
+
+    public Boolean getPymntChannel() {
+        return isPymntChannel;
+    }
+
+    public void setPymntChannel(Boolean pymntChannel) {
+        isPymntChannel = pymntChannel;
+    }
+
+    public Boolean getPymntChContact() {
+        return isPymntChContact;
+    }
+
+    public void setPymntChContact(Boolean pymntChContact) {
+        isPymntChContact = pymntChContact;
+    }
+
     public Boolean getMember() {
         return isMember;
     }
@@ -300,51 +395,28 @@ public class User {
         isMember = member;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return id.equals(user.id) &&
-                username.equals(user.username) &&
-                password.equals(user.password) &&
-                userType.equals(user.userType) &&
-                isLegalPerson.equals(user.isLegalPerson) &&
-                userLastName.equals(user.userLastName) &&
-                userFirstName.equals(user.userFirstName) &&
-                address1Text.equals(user.address1Text) &&
-                address2Text.equals(user.address2Text) &&
-                cityName.equals(user.cityName) &&
-                stateCode.equals(user.stateCode) &&
-                postalCode.equals(user.postalCode) &&
-                countryCode.equals(user.countryCode) &&
-                landlineNumber.equals(user.landlineNumber) &&
-                faxNumber.equals(user.faxNumber) &&
-                cellPhoneNumber.equals(user.cellPhoneNumber) &&
-                userEmail.equals(user.userEmail) &&
-                website.equals(user.website) &&
-                userIDType.equals(user.userIDType) &&
-                userIDNumber.equals(user.userIDNumber) &&
-                userDOBDate.equals(user.userDOBDate) &&
-                userTaxCode.equals(user.userTaxCode) &&
-                userTaxCUITL.equals(user.userTaxCUITL) &&
-                isStore.equals(user.isStore) &&
-                isStoreContact.equals(user.isStoreContact) &&
-                isCustomer.equals(user.isCustomer) &&
-                isSupplier.equals(user.isSupplier) &&
-                isShipper.equals(user.isShipper) &&
-                isMember.equals(user.isMember) &&
-                Objects.equals(userFacebookLink, user.userFacebookLink) &&
-                Objects.equals(userTwitterLink, user.userTwitterLink) &&
-                Objects.equals(userInstagramLink, user.userInstagramLink) &&
-                Objects.equals(userPinterestLink, user.userPinterestLink) &&
-                Objects.equals(subscriptionEmail, user.subscriptionEmail) &&
-                Objects.equals(userStatus, user.userStatus);
+    public Boolean getCustomer() {
+        return isCustomer;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, username, password, userType, isLegalPerson, userLastName, userFirstName, address1Text, address2Text, cityName, stateCode, postalCode, countryCode, landlineNumber, faxNumber, cellPhoneNumber, userEmail, website, userIDType, userIDNumber, userDOBDate, userTaxCode, userTaxCUITL, isStore, isStoreContact, isCustomer, isSupplier, isShipper, isMember, userFacebookLink, userTwitterLink, userInstagramLink, userPinterestLink, subscriptionEmail, userStatus);
+    public void setCustomer(Boolean customer) {
+        isCustomer = customer;
+    }
+
+    public Boolean getSubscriber() {
+        return isSubscriber;
+    }
+
+    public void setSubscriber(Boolean subscriber) {
+        isSubscriber = subscriber;
+    }
+
+    public Boolean getBlogger() {
+        return isBlogger;
+    }
+
+    public void setBlogger(Boolean blogger) {
+        isBlogger = blogger;
     }
 
     public String getUserFacebookLink() {
@@ -387,12 +459,12 @@ public class User {
         this.subscriptionEmail = subscriptionEmail;
     }
 
-    public String getUserStatus() {
-        return userStatus;
+    public String getCreatedByID() {
+        return createdByID;
     }
 
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
+    public void setCreatedByID(String createdByID) {
+        this.createdByID = createdByID;
     }
 
     public String getCreatedDatime() {
@@ -419,12 +491,23 @@ public class User {
         this.modifDatime = modifDatime;
     }
 
+    public String getUserStatus() {
+        return userStatus;
+    }
+
+    public void setUserStatus(String userStatus) {
+        this.userStatus = userStatus;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "userID=" + id +
+                ", departmentID=" + departmentID +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", userAlias='" + userAlias + '\'' +
+                ", avatarPhotoLink='" + avatarPhotoLink + '\'' +
                 ", userType='" + userType + '\'' +
                 ", isLegalPerson=" + isLegalPerson +
                 ", userLastName='" + userLastName + '\'' +
@@ -433,29 +516,39 @@ public class User {
                 ", address2Text='" + address2Text + '\'' +
                 ", cityName='" + cityName + '\'' +
                 ", stateCode='" + stateCode + '\'' +
-                ", postalCode='" + postalCode + '\'' +
+                ", postalCode=" + postalCode +
                 ", countryCode='" + countryCode + '\'' +
-                ", landlineNumber='" + landlineNumber + '\'' +
-                ", faxNumber='" + faxNumber + '\'' +
-                ", cellPhoneNumber='" + cellPhoneNumber + '\'' +
-                ", userEmail='" + userEmail + '\'' +
+                ", landlineNumber=" + landlineNumber +
+                ", faxNumber=" + faxNumber +
+                ", cellPhoneNumber=" + cellPhoneNumber +
+                ", alternateEmail='" + alternateEmail + '\'' +
                 ", website='" + website + '\'' +
                 ", userIDType='" + userIDType + '\'' +
-                ", userIDNumber='" + userIDNumber + '\'' +
+                ", userIDNumber=" + userIDNumber +
                 ", userDOBDate='" + userDOBDate + '\'' +
                 ", userTaxCode='" + userTaxCode + '\'' +
-                ", userTaxCUITL='" + userTaxCUITL + '\'' +
+                ", userTaxCUITL=" + userTaxCUITL +
                 ", isStore=" + isStore +
                 ", isStoreContact=" + isStoreContact +
-                ", isCustomer=" + isCustomer +
                 ", isSupplier=" + isSupplier +
+                ", isSupplierContact=" + isSupplierContact +
                 ", isShipper=" + isShipper +
+                ", isShipperContact=" + isShipperContact +
+                ", isPymntChannel=" + isPymntChannel +
+                ", isPymntChContact=" + isPymntChContact +
                 ", isMember=" + isMember +
+                ", isCustomer=" + isCustomer +
+                ", isSubscriber=" + isSubscriber +
+                ", isBlogger=" + isBlogger +
                 ", userFacebookLink='" + userFacebookLink + '\'' +
                 ", userTwitterLink='" + userTwitterLink + '\'' +
                 ", userInstagramLink='" + userInstagramLink + '\'' +
                 ", userPinterestLink='" + userPinterestLink + '\'' +
                 ", subscriptionEmail='" + subscriptionEmail + '\'' +
+                ", createdByID='" + createdByID + '\'' +
+                ", createdDatime='" + createdDatime + '\'' +
+                ", modifByID='" + modifByID + '\'' +
+                ", modifDatime='" + modifDatime + '\'' +
                 ", userStatus='" + userStatus + '\'' +
                 '}';
     }

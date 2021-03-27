@@ -9,7 +9,7 @@ public class Product {
     @GeneratedValue
     Long id;
     private String productNumber;
-    private String departmentID;
+    private Integer departmentID;
     private String  productSKU;
     private String productEAN;
     private String productShortName;
@@ -61,10 +61,50 @@ public class Product {
     private Integer gridDefaulPositiontIndex;
     private String prodPriorityNumber;
 
+    private String galleryImg1;
+    private String galleryImg2;
+    private String galleryImg3;
+    private String galleryImg4;
+    private String galleryImg5;
+
+
     public Product() {
     }
 
-    public Product(String productNumber, String productSKU, String productShortName, String productDescription, Integer prodCategoryCode, Integer prodSubcategoryCode, String brandCode, String modelCode, String yearCode, String styleCode, String genderCode, String packagingCode, String materialCode, String colorCode, String sizeCode, String flavorCode) {
+    public Product(Integer departmentID, String productNumber, String productSKU, String productShortName, String productDescription,
+                   Integer prodCategoryCode, Integer prodSubcategoryCode, String brandCode, String modelCode, String yearCode, String styleCode,
+                   String genderCode, String packagingCode, String materialCode,
+                   String colorCode, String sizeCode, String flavorCode, String prodDefaultContentLink, String prodDefaultHoverLink, String galleryImg1,
+                   String galleryImg2, String galleryImg3, String galleryImg4, String galleryImg5, Boolean isCampaigning) {
+        this.departmentID = departmentID;
+        this.productNumber = productNumber;
+        this.productSKU = productSKU;
+        this.productShortName = productShortName;
+        this.productDescription = productDescription;
+        this.prodCategoryCode = prodCategoryCode;
+        this.prodSubcategoryCode = prodSubcategoryCode;
+        this.brandCode = brandCode;
+        this.modelCode = modelCode;
+        this.yearCode = yearCode;
+        this.styleCode = styleCode;
+        this.genderCode = genderCode;
+        this.packagingCode = packagingCode;
+        this.materialCode = materialCode;
+        this.colorCode = colorCode;
+        this.sizeCode = sizeCode;
+        this.flavorCode = flavorCode;
+        this.prodDefaultContentLink = prodDefaultContentLink;
+        this.prodDefaultHoverLink = prodDefaultHoverLink;
+        this.galleryImg1 = galleryImg1;
+        this.galleryImg2 = galleryImg2;
+        this.galleryImg3 = galleryImg3;
+        this.galleryImg4 = galleryImg4;
+        this.galleryImg5 = galleryImg5;
+        this.isCampaigning = isCampaigning;
+    }
+
+    public Product(Integer departmentID, String productNumber, String productSKU, String productShortName, String productDescription, Integer prodCategoryCode, Integer prodSubcategoryCode, String brandCode, String modelCode, String yearCode, String styleCode, String genderCode, String packagingCode, String materialCode, String colorCode, String sizeCode, String flavorCode) {
+        this.departmentID = departmentID;
         this.productNumber = productNumber;
         this.productSKU = productSKU;
         this.productShortName = productShortName;
@@ -82,7 +122,6 @@ public class Product {
         this.sizeCode = sizeCode;
         this.flavorCode = flavorCode;
     }
-
     public Long getId() {
         return id;
     }
@@ -99,11 +138,11 @@ public class Product {
         this.productNumber = productNumber;
     }
 
-    public String getDepartmentID() {
+    public Integer getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(String departmentID) {
+    public void setDepartmentID(Integer departmentID) {
         this.departmentID = departmentID;
     }
 

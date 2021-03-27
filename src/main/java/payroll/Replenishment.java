@@ -10,7 +10,7 @@ public class Replenishment {
     @GeneratedValue
     Long id;
     private String replenishmentOrderNr;
-    private String departmentID;
+    private Integer departmentID;
     private String supplierID;
     private String repGenDatime;
     private String repPlacedDatime;
@@ -28,7 +28,7 @@ public class Replenishment {
     public Replenishment() {
     }
 
-    public Replenishment(String replenishmentOrderNr, String departmentID, String supplierID, String repGenDatime, String repPlacedDatime, String repOrderStatus, Integer repLineItemNr, String productID, String supplierProductID, Double quantityOrdered, Double quantityReceived, Double estimatedUnitCost, Double actualUnitCost, String dateFulfilled, String repLIStatus) {
+    public Replenishment(String replenishmentOrderNr, Integer departmentID, String supplierID, String repGenDatime, String repPlacedDatime, String repOrderStatus, Integer repLineItemNr, String productID, String supplierProductID, Double quantityOrdered, Double quantityReceived, Double estimatedUnitCost, Double actualUnitCost, String dateFulfilled, String repLIStatus) {
         this.replenishmentOrderNr = replenishmentOrderNr;
         this.departmentID = departmentID;
         this.supplierID = supplierID;
@@ -62,11 +62,11 @@ public class Replenishment {
         this.replenishmentOrderNr = replenishmentOrderNr;
     }
 
-    public String getDepartmentID() {
+    public Integer getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(String departmentID) {
+    public void setDepartmentID(Integer departmentID) {
         this.departmentID = departmentID;
     }
 

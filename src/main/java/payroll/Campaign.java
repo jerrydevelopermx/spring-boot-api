@@ -10,7 +10,7 @@ public class Campaign {
     @GeneratedValue
     Long id;
     private String campaignNumber;
-    private String departmentID;
+    private Integer departmentID;
     private String productID;
     private String campaignType;
     private String campaignOccurrence;
@@ -22,7 +22,7 @@ public class Campaign {
     public Campaign() {
     }
 
-    public Campaign(String campaignNumber, String departmentID, String campaignOccurrence, Integer gridPositionIndex, String promotedFromDatime, String promotedToDatime, String campaignStatus) {
+    public Campaign(String campaignNumber, Integer departmentID, String campaignOccurrence, Integer gridPositionIndex, String promotedFromDatime, String promotedToDatime, String campaignStatus) {
         this.campaignNumber = campaignNumber;
         this.departmentID = departmentID;
         this.campaignOccurrence = campaignOccurrence;
@@ -32,7 +32,7 @@ public class Campaign {
         this.campaignStatus = campaignStatus;
     }
 
-    public Campaign(String campaignNumber, String departmentID, String productID, String campaignType, String campaignOccurrence, Integer gridPositionIndex, String promotedFromDatime, String promotedToDatime, String campaignStatus) {
+    public Campaign(String campaignNumber, Integer departmentID, String productID, String campaignType, String campaignOccurrence, Integer gridPositionIndex, String promotedFromDatime, String promotedToDatime, String campaignStatus) {
         this.campaignNumber = campaignNumber;
         this.departmentID = departmentID;
         this.productID = productID;
@@ -60,11 +60,11 @@ public class Campaign {
         this.campaignNumber = campaignNumber;
     }
 
-    public String getDepartmentID() {
+    public Integer getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(String departmentID) {
+    public void setDepartmentID(Integer departmentID) {
         this.departmentID = departmentID;
     }
 

@@ -9,7 +9,7 @@ public class Department {
     private @Id
     @GeneratedValue
     Long id;
-    private String departmentID;
+    private Long departmentID;
     private Integer departmentNumber;
     private String departmentName;
     private String userID;
@@ -42,7 +42,7 @@ public class Department {
         this.deptCategoryNumber = deptCategoryNumber;
     }
 
-    public Department(String departmentID, Integer departmentNumber, String departmentName, Integer deptCategoryNumber, String deptStatus, String placeHolderSinceDate, String placeHolderThruDate, String placeHolderType, String placeHolderCode, String contractLink, String createdByID, String createdDatime, String modifiedByID, String modifiedDatime) {
+    public Department(Long departmentID, Integer departmentNumber, String departmentName, Integer deptCategoryNumber, String deptStatus, String placeHolderSinceDate, String placeHolderThruDate, String placeHolderType, String placeHolderCode, String contractLink, String createdByID, String createdDatime, String modifiedByID, String modifiedDatime) {
         this.departmentID = departmentID;
         this.departmentNumber = departmentNumber;
         this.departmentName = departmentName;
@@ -67,11 +67,11 @@ public class Department {
         this.id = id;
     }
 
-    public String getDepartmentID() {
+    public Long getDepartmentID() {
         return departmentID;
     }
 
-    public void setDepartmentID(String departmentID) {
+    public void setDepartmentID(Long departmentID) {
         this.departmentID = departmentID;
     }
 

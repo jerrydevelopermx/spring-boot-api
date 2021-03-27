@@ -8,7 +8,8 @@ import javax.persistence.Id;
 public class SiteCMS {
     private @Id
     @GeneratedValue
-    Long siteID;
+    Long id;
+    private Long siteID;
     private String siteLogoLink;
     private String siteBodyColorRGB;
     private String siteBodyFontColorText;
@@ -49,6 +50,19 @@ public class SiteCMS {
     public SiteCMS() {
     }
 
+
+    public SiteCMS(Long siteID, String siteLogoLink, String siteBodyColorRGB, String siteBodyFontColorText, String siteFontNameText, String siteMainColorRGB, String siteMainFontColorText) {
+        this.siteID = siteID;
+        this.siteLogoLink = siteLogoLink;
+        this.siteBodyColorRGB = siteBodyColorRGB;
+        this.siteBodyFontColorText = siteBodyFontColorText;
+        this.siteFontNameText = siteFontNameText;
+        this.siteMainColorRGB = siteMainColorRGB;
+        this.siteMainFontColorText = siteMainFontColorText;
+    }
+
+
+
     public SiteCMS(String siteLogoLink, String siteBodyColorRGB, String siteBodyFontColorText, String siteFontNameText, String siteMainColorRGB, String siteMainFontColorText) {
         this.siteLogoLink = siteLogoLink;
         this.siteBodyColorRGB = siteBodyColorRGB;
@@ -56,6 +70,52 @@ public class SiteCMS {
         this.siteFontNameText = siteFontNameText;
         this.siteMainColorRGB = siteMainColorRGB;
         this.siteMainFontColorText = siteMainFontColorText;
+    }
+
+    public SiteCMS(Long siteID, String siteLogoLink, String siteBodyColorRGB, String siteBodyFontColorText, String siteFontNameText, String siteMainColorRGB, String siteMainFontColorText, String siteTitleText, String siteMetaDescriptionText, String blogLink, String slide1DefaultLink, String slide2DefaultLink, String slide3DefaultLink, String slide4DefaultLink, String slide5DefaultLink, String event1DefaultLink, String event2DefaultLink, String event3DefaultLink, String tourDefaultLink, String siteFacebookLink, String siteTwitterLink, String siteInstagramLink, String sitePinterestLink, String siteCopyright, String ourServMissionJson, String ourServWhoWeRJson, String ourServBoardJson, String ourServFeaturesJson, String ourServMmbshipJson, String contactUsJson, String footerHistoryJson, String sitePoliciesJson, String siteMembersPolicyJson, String siteCustomrsPolicyJson, String siteVisitorsPolicyJson) {
+        this.siteID = siteID;
+        this.siteLogoLink = siteLogoLink;
+        this.siteBodyColorRGB = siteBodyColorRGB;
+        this.siteBodyFontColorText = siteBodyFontColorText;
+        this.siteFontNameText = siteFontNameText;
+        this.siteMainColorRGB = siteMainColorRGB;
+        this.siteMainFontColorText = siteMainFontColorText;
+        this.siteTitleText = siteTitleText;
+        this.siteMetaDescriptionText = siteMetaDescriptionText;
+        this.blogLink = blogLink;
+        this.slide1DefaultLink = slide1DefaultLink;
+        this.slide2DefaultLink = slide2DefaultLink;
+        this.slide3DefaultLink = slide3DefaultLink;
+        this.slide4DefaultLink = slide4DefaultLink;
+        this.slide5DefaultLink = slide5DefaultLink;
+        this.event1DefaultLink = event1DefaultLink;
+        this.event2DefaultLink = event2DefaultLink;
+        this.event3DefaultLink = event3DefaultLink;
+        this.tourDefaultLink = tourDefaultLink;
+        this.siteFacebookLink = siteFacebookLink;
+        this.siteTwitterLink = siteTwitterLink;
+        this.siteInstagramLink = siteInstagramLink;
+        this.sitePinterestLink = sitePinterestLink;
+        this.siteCopyright = siteCopyright;
+        this.ourServMissionJson = ourServMissionJson;
+        this.ourServWhoWeRJson = ourServWhoWeRJson;
+        this.ourServBoardJson = ourServBoardJson;
+        this.ourServFeaturesJson = ourServFeaturesJson;
+        this.ourServMmbshipJson = ourServMmbshipJson;
+        this.contactUsJson = contactUsJson;
+        this.footerHistoryJson = footerHistoryJson;
+        this.sitePoliciesJson = sitePoliciesJson;
+        this.siteMembersPolicyJson = siteMembersPolicyJson;
+        this.siteCustomrsPolicyJson = siteCustomrsPolicyJson;
+        this.siteVisitorsPolicyJson = siteVisitorsPolicyJson;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getSiteID() {
